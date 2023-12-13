@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TabView</string>
+    <string name="running" />
+    <string name="cycling">\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_running_fragment">hello running fragment</string>
+    <string name="hello_cycling_fragment">hello cycling fragment</string>
+</resources>
