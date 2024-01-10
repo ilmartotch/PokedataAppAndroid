@@ -2,13 +2,18 @@ package com.example.pokecarddata.dati;
 
 public class DatiCopertina {
     String image;
+    String logo;
     String nomeSet;
     String idSet;
+    int totalCard;
 
-    public DatiCopertina(String image, String nomeSet, String idSet) {
+
+    public DatiCopertina(String image, String logo, String nomeSet, String idSet, int totalCard) {
         this.image = image;
+        this.logo = logo;
         this.nomeSet = nomeSet;
         this.idSet = idSet;
+        this.totalCard = totalCard;
     }
 }
 
