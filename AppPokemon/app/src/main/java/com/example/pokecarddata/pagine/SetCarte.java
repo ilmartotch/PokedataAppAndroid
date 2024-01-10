@@ -1,10 +1,14 @@
-package com.example.pokecarddata;
+package com.example.pokecarddata.pagine;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.pokecarddata.R;
+import com.example.pokecarddata.adapter.CopertinaAdapter;
+import com.example.pokecarddata.dati.DatiCopertina;
 
 import java.util.ArrayList;
 

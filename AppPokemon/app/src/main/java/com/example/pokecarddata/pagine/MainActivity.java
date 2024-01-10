@@ -1,14 +1,13 @@
-package com.example.pokecarddata;
+package com.example.pokecarddata.pagine;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import java.util.ArrayList;
+import com.example.pokecarddata.R;
 
 public class MainActivity extends AppCompatActivity {
 

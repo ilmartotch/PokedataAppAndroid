@@ -1,4 +1,4 @@
-package com.example.pokecarddata;
+package com.example.pokecarddata.api;
 
 import android.app.Application;
 
@@ -7,10 +7,10 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 
 public class AppController extends Application {
-    private AppController instance;
+    private static AppController instance;
     private RequestQueue requestQueue;
 
-    public synchronized AppController getInstance() {
+    public static synchronized AppController getInstance() {
         return instance;
     }
 
