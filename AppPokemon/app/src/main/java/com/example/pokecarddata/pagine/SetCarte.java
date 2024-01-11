@@ -3,6 +3,7 @@ package com.example.pokecarddata.pagine;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -37,33 +38,15 @@ public class SetCarte extends AppCompatActivity {
             finish();
         });
 
-       // RecyclerView recyclerView = findViewById(R.id.listaSet);
-//        CopertinaAdapter projectsAdapter = new CopertinaAdapter(listaDatiCopertina);
-//        recyclerView.setAdapter(projectsAdapter);
 
         new DatiApi().getPosts(new PostAsyncResponse() {
             @Override
             public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
-                ListView listView = findViewById(R.id.listaSet);
-                ArrayAdapter<DatiCopertina> arrayAdapter = new ArrayAdapter<DatiCopertina>(
-                        SetCarte.this,
-                        android.R.layout.simple_list_item_2,
-                        android.R.id.text1,
-                        listaDatiCopertina) {
-                    @NonNull
-                    @Override
-                    public View getView(int position,
-                                        @Nullable View convertView,
-                                        @NonNull ViewGroup parent) {
-                        View view = super.getView(position, convertView, parent);
-                        TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-                        TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-                        text1.setText(listaDatiCopertina.get(position).getImage());
-                        return view;
-                    }
-                };
+                RecyclerView recyclerView = findViewById(R.id.listaSet);
+                recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 2));
+                CopertinaAdapter projectsAdapter = new CopertinaAdapter(listaDatiCopertina);
 
-                listView.setAdapter(arrayAdapter);
+                recyclerView.setAdapter(projectsAdapter);
 
             }
 

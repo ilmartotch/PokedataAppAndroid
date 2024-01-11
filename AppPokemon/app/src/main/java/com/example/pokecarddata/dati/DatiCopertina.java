@@ -75,7 +75,7 @@ public class DatiCopertina {
 //        "updatedAt": "2020/08/14 09:35:00",
 //        "images": {
 //        "symbol": "https://images.pokemontcg.io/swsh1/symbol.png",
-//        "logo": "https://images.pokemontcg.io/swsh1/logo.png"
+    //        "logo": "https://images.pokemontcg.io/swsh1/logo.png"
 //        }
 //        }
 //        }
