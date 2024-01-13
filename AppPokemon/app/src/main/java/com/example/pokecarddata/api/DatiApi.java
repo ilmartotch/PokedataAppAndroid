@@ -61,8 +61,3 @@ public class DatiApi {
     }
 
 }
-
-//allora... non va un cazzo, 18 errori e penso di aver implementato il codice di merda
-//non so dove devo mettere l'ultima parte del codice
-//devo implementare la libreria picasso per mostrare le immagini in app tramite il link http
-//penso che poi lo scheletro dell'app sia fatto, manca solo la grafica ora

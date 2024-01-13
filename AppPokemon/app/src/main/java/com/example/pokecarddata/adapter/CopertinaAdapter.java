@@ -53,7 +53,7 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         }
 
         public void bind(DatiCopertina dati) {
-            image.setImageResource(R.drawable.ic_launcher_background);
+            image.setImageResource(R.drawable.sfondo_pokedata);
             Picasso.get()
                     .load(dati.getImage())
                     .into(image, new com.squareup.picasso.Callback(){
