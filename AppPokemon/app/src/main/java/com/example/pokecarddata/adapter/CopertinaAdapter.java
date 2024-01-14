@@ -54,6 +54,9 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         return dati.size();
     }
 
+    public void setFilter(ArrayList<DatiCopertina> datifiltrati) {
+    }
+
     static class CopertinaViewHolder extends RecyclerView.ViewHolder {
         private final ImageView image;
 
