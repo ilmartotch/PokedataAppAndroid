@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pagine.DettaglioSet">
+    tools:context=".pagine.DettaglioSet"
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/copertinaDettaglio"
@@ -21,9 +22,12 @@
         android:id="@+id/titoloSet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="titolo set"
+        android:layout_marginTop="80dp"
+        android:text="Titolo set"
+        android:textColor="@color/white"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/copertinaDettaglio" />
 
@@ -31,8 +35,10 @@
         android:id="@+id/carteTotali"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="totale carte"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:text="Totale carte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titoloSet" />
@@ -41,10 +47,24 @@
         android:id="@+id/dataRilascio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="data rilascio"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:text="Data rilascio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carteTotali" />
+
+    <Button
+        android:id="@+id/buttonBackSet"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/rosso"
+        android:text="Back Set"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataRilascio"
+        tools:layout_editor_absoluteX="30dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

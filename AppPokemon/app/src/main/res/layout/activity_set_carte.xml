@@ -5,19 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pagine.SetCarte"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".pagine.SetCarte">
 
-    <Button
+    <ImageButton
         android:id="@+id/backHomeCarte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/giallo"
-        android:textColor="@color/black"
-        android:text="@string/button"
+        android:layout_width="131dp"
+        android:layout_height="41dp"
+        android:background="@drawable/logoapp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="15dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaSet"
@@ -29,13 +27,12 @@
 
     <SearchView
         android:id="@+id/ricercaSet"
-        android:background="@color/barraDiRicerca"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/backHomeCarte"
+        android:layout_width="241dp"
+        android:layout_height="41dp"
+        android:background="@drawable/roundedstyle"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="15dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

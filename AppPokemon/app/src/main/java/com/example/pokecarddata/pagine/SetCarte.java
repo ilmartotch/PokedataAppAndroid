@@ -107,6 +107,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SearchView;
 
 import com.example.pokecarddata.R;
@@ -128,8 +130,7 @@ public class SetCarte extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_carte);
 
-        Button backButton = findViewById(R.id.backHomeCarte);
-
+        ImageButton backButton = findViewById(R.id.backHomeCarte);
         backButton.setOnClickListener(view -> {
             finish();
         });

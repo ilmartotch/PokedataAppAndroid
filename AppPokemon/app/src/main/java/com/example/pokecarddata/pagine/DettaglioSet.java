@@ -3,6 +3,7 @@ package com.example.pokecarddata.pagine;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,13 @@ public class DettaglioSet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dettaglio_set);
+
+
+        Button backButton = findViewById(R.id.buttonBackSet);
+        backButton.setOnClickListener(view -> {
+            finish();
+        });
+
 
         DatiCopertina datiCopertina = (DatiCopertina) (getIntent().getSerializableExtra("dettaglio"));
 

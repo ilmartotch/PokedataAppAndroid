@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#DA1B1B1B</color>
     <color name="white">#FFFFFFFF</color>
     <color name="giallo">#B3FFE501</color>
-    <color name="barraDiRicerca">#B3D5D3D3</color>
+    <color name="barraDiRicerca">#E6242A35</color>
     <color name="sfondo">#AAAAAA</color>
+    <color name="rosso">#F24E56</color>
 </resources>
