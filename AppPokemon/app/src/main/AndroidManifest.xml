@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <user-sdk android:minSdkVersion="28"/>
+
     <application
         android:name=".api.AppController"
         android:allowBackup="true"
@@ -16,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeCardData"
         tools:targetApi="31">
+
         <activity
             android:name=".pagine.DettaglioSet"
             android:exported="false"

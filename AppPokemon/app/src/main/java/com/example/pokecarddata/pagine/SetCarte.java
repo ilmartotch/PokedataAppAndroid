@@ -1,12 +1,9 @@
 package com.example.pokecarddata.pagine;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -22,7 +19,16 @@ import java.util.ArrayList;
 
 public class SetCarte extends AppCompatActivity {
 
-    ArrayList<DatiCopertina> listaDatiCopertina = new ArrayList<>();
+    private final ArrayList<DatiCopertina> dati;
+
+    private final ArrayList<DatiCopertina> datifiltrati;
+
+    CopertinaAdapter projectsAdapter;
+
+    public SetCarte(ArrayList<DatiCopertina> dati, ArrayList<DatiCopertina> datifiltrati) {
+        this.dati = dati;
+        this.datifiltrati = datifiltrati;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,9 @@ public class SetCarte extends AppCompatActivity {
             @Override
             public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
                 RecyclerView recyclerView = findViewById(R.id.listaSet);
+
                 recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 1));
+
                 CopertinaAdapter projectsAdapter = new CopertinaAdapter(listaDatiCopertina);
 
                 recyclerView.setAdapter(projectsAdapter);
@@ -58,29 +66,34 @@ public class SetCarte extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                ricerca(query);
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                CopertinaAdapter.filter(newText);
+            public boolean onQueryTextChange(String query) {
+//                CopertinaAdapter.filter(query);
+                ricerca(query);
                 return true;
             }
+
+            public void ricerca(String query) {
+                datifiltrati.clear();
+
+                if (query.isEmpty()) {
+                    datifiltrati.addAll(dati);
+                } else {
+                    for (DatiCopertina dato : dati) {
+                        if (dato.getNomeSet().toLowerCase().contains(query.toLowerCase())) {
+                            datifiltrati.add(dato);
+                        }
+                    }
+                }
+                projectsAdapter.notifyDataSetChanged();
+            }
         });
 
-        new RaccoltaDatiApi().getPosts(new PostAsyncResponse() {
-            @Override
-            public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
-                RecyclerView recyclerView = findViewById(R.id.listaSet);
-                recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 1));
-                CopertinaAdapter nuovaListaSet = new CopertinaAdapter(listaDatiCopertina);
-                recyclerView.setAdapter(nuovaListaSet);
-            }
-
-            @Override
-            public void processoFallito(Exception e) {
-            }
-        });
 
     }
+
 }

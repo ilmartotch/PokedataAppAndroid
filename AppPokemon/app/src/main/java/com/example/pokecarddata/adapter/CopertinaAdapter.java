@@ -18,7 +18,6 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.CopertinaViewHolder> {
-
     private final ArrayList<DatiCopertina> dati;
 
     public CopertinaAdapter(ArrayList<DatiCopertina> dati) {
@@ -26,16 +25,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
     }
 
     public static void filter(String newText) {
-    }
-
-    public void riarca(String nomeRicerca) {
-        ArrayList<DatiCopertina> listaRicerca = new ArrayList<>();
-        for (DatiCopertina dato : dati) {
-            if (dato.getNomeSet().toLowerCase().contains(nomeRicerca.toLowerCase())) {
-                listaRicerca.add(dato);
-            }
-        }
-        notifyDataSetChanged();
     }
 
     @NonNull
@@ -57,8 +46,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
             v.getContext().startActivity(paginaDettaglioSet);
 
         });
-
-
 
     }
 

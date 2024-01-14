@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pagine.SetCarte"
-    android:background="@color/sfondo">
+    android:background="@color/black">
 
     <Button
         android:id="@+id/backHomeCarte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/giallo"
+        android:backgroundTint="@color/giallo"
         android:textColor="@color/black"
         android:text="@string/button"
         tools:ignore="MissingConstraints"
@@ -29,7 +29,7 @@
 
     <SearchView
         android:id="@+id/ricercaSet"
-        android:textColor="@color/barraDiRicerca"
+        android:background="@color/barraDiRicerca"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
