@@ -1,23 +1,19 @@
 package com.example.pokecarddata.pagine;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import static androidx.core.content.ContextCompat.startActivity;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.pokecarddata.R;
 import com.example.pokecarddata.adapter.CopertinaAdapter;
-import com.example.pokecarddata.api.DatiApi;
+import com.example.pokecarddata.api.RaccoltaDatiApi;
 import com.example.pokecarddata.api.PostAsyncResponse;
 import com.example.pokecarddata.dati.DatiCopertina;
 
@@ -39,7 +35,7 @@ public class SetCarte extends AppCompatActivity {
         });
 
 
-        new DatiApi().getPosts(new PostAsyncResponse() {
+        new RaccoltaDatiApi().getPosts(new PostAsyncResponse() {
             @Override
             public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
                 RecyclerView recyclerView = findViewById(R.id.listaSet);

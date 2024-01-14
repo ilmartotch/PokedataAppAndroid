@@ -1,11 +1,22 @@
 package com.example.pokecarddata.dati;
 
-public class DatiCopertina {
+import java.io.Serializable;
+
+public class DatiCopertina implements Serializable {
     String image;
     String logo;
     String nomeSet;
     String idSet;
     int totalCard;
+    String dataRilascio;
+
+    public String getDataRilascio() {
+        return dataRilascio;
+    }
+
+    public void setDataRilascio(String dataRilascio) {
+        this.dataRilascio = dataRilascio;
+    }
 
     public String getImage() {
         return image;
@@ -47,12 +58,13 @@ public class DatiCopertina {
         this.totalCard = totalCard;
     }
 
-    public DatiCopertina(String image, String logo, String nomeSet, String idSet, int totalCard) {
+    public DatiCopertina(String image, String logo, String nomeSet, String idSet, int totalCard, String dataRilascio) {
         this.image = image;
         this.logo = logo;
         this.nomeSet = nomeSet;
         this.idSet = idSet;
         this.totalCard = totalCard;
+        this.dataRilascio = dataRilascio;
     }
 }
 

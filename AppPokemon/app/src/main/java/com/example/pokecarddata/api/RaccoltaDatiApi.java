@@ -1,39 +1,27 @@
 package com.example.pokecarddata.api;
 
-import android.os.Bundle;
 import android.util.Log;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
-import com.android.volley.RetryPolicy;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.pokecarddata.R;
 import com.example.pokecarddata.dati.DatiCopertina;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class DatiApi {
+public class RaccoltaDatiApi {
 
-    public JSONArray jsonArray;
-    String urlPost = "https://api.pokemontcg.io/v2/sets";
+    public static JSONArray jsonArray;
+    private static String urlPosts = "https://api.pokemontcg.io/v2/sets";
 
     public void getPosts(final PostAsyncResponse callBack) {
 
         ArrayList<DatiCopertina> listaDatiCopertina = new ArrayList<>();
 
         JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.GET, urlPost, null, response -> {
+                Request.Method.GET, urlPosts, null, response -> {
 
                     try{
                         jsonArray = response.getJSONArray("data");
@@ -42,8 +30,9 @@ public class DatiApi {
                             String logo=jsonArray.getJSONObject(i).getJSONObject("images").getString("logo");
                             String name = jsonArray.getJSONObject(i).getString("name");
                             String id =jsonArray.getJSONObject(i).getString("id");
-                            int nCards = jsonArray.getJSONObject(i).getInt("total");
-                            listaDatiCopertina.add(new DatiCopertina(logo,"", name, id, nCards));
+                            int totalCard = jsonArray.getJSONObject(i).getInt("total");
+                            String dataRilascio = jsonArray.getJSONObject(i).getString("releaseDate");
+                            listaDatiCopertina.add(new DatiCopertina(logo,"", name, id, totalCard, dataRilascio));
                         }
 
                         callBack.processoTerminato(listaDatiCopertina);
