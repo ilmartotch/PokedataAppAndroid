@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.CopertinaViewHolder> {
 
-    private ArrayList<DatiCopertina> dati;
+    private final ArrayList<DatiCopertina> dati;
 
     public CopertinaAdapter(ArrayList<DatiCopertina> dati) {
         this.dati = dati;
@@ -30,6 +31,7 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardset, parent, false);
         return new CopertinaViewHolder(view);
+
 
     }
 
@@ -43,6 +45,7 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
             v.getContext().startActivity(paginaDettaglioSet);
 
         });
+
     }
 
     @Override
@@ -57,6 +60,11 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
             super(itemView);
 
             image = itemView.findViewById(R.id.copertinaSet);
+//            TextView nomeSet = itemView.findViewById(R.id.testoSottoImmagine);
+//            devo recuperare il nome di ogni set e inserirlo sotto l'immmagine della copertina
+//            in questo modo posso utilizzare la ricerca e far scorrere le card con solo la copertina in vista
+//
+
 
         }
 
@@ -76,6 +84,7 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
                         }
                     });
         }
+
     }
 
 }
