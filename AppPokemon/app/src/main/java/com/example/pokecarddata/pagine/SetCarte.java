@@ -39,7 +39,7 @@ public class SetCarte extends AppCompatActivity {
             @Override
             public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
                 RecyclerView recyclerView = findViewById(R.id.listaSet);
-                recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 2));
+//                recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 2));
                 CopertinaAdapter projectsAdapter = new CopertinaAdapter(listaDatiCopertina);
 
                 recyclerView.setAdapter(projectsAdapter);
