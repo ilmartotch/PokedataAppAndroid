@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import com.example.pokecarddata.R;
 import com.example.pokecarddata.adapter.CopertinaAdapter;
@@ -51,6 +52,34 @@ public class SetCarte extends AppCompatActivity {
                 Log.d("Errore", e.getMessage());
             }
 
+        });
+
+        SearchView searchView = findViewById(R.id.ricercaSet);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                CopertinaAdapter.filter(newText);
+                return true;
+            }
+        });
+
+        new RaccoltaDatiApi().getPosts(new PostAsyncResponse() {
+            @Override
+            public void processoTerminato(ArrayList<DatiCopertina> listaDatiCopertina) {
+                RecyclerView recyclerView = findViewById(R.id.listaSet);
+                recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 1));
+                CopertinaAdapter nuovaListaSet = new CopertinaAdapter(listaDatiCopertina);
+                recyclerView.setAdapter(nuovaListaSet);
+            }
+
+            @Override
+            public void processoFallito(Exception e) {
+            }
         });
 
     }

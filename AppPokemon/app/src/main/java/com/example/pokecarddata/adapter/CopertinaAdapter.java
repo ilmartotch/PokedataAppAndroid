@@ -25,13 +25,25 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         this.dati = dati;
     }
 
+    public static void filter(String newText) {
+    }
+
+    public void riarca(String nomeRicerca) {
+        ArrayList<DatiCopertina> listaRicerca = new ArrayList<>();
+        for (DatiCopertina dato : dati) {
+            if (dato.getNomeSet().toLowerCase().contains(nomeRicerca.toLowerCase())) {
+                listaRicerca.add(dato);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public CopertinaViewHolder onCreateViewHolder(@NonNull ViewGroup parent,int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardset, parent, false);
         return new CopertinaViewHolder(view);
-
 
     }
 
@@ -45,6 +57,8 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
             v.getContext().startActivity(paginaDettaglioSet);
 
         });
+
+
 
     }
 
@@ -60,11 +74,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
             super(itemView);
 
             image = itemView.findViewById(R.id.copertinaSet);
-//            TextView nomeSet = itemView.findViewById(R.id.testoSottoImmagine);
-//            devo recuperare il nome di ogni set e inserirlo sotto l'immmagine della copertina
-//            in questo modo posso utilizzare la ricerca e far scorrere le card con solo la copertina in vista
-//
-
 
         }
 
@@ -83,6 +92,10 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
 
                         }
                     });
+
+            TextView nomeSet = itemView.findViewById(R.id.testoSottoImmagine);
+            nomeSet.setText(dati.getNomeSet());
+
         }
 
     }

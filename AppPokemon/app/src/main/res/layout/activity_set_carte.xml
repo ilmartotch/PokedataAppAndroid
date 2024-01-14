@@ -28,6 +28,7 @@
         tools:listitem="@layout/cardset" />
 
     <SearchView
+        android:id="@+id/ricercaSet"
         android:textColor="@color/barraDiRicerca"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
