@@ -97,4 +97,8 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="dati_del_set">Dati del set:</string>
+    <string name="ListaCarte">Lista Carte</string>
+    <string name="altre_carte">Altre Carte</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

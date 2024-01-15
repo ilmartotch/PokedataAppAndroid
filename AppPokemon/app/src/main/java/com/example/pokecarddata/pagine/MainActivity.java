@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bottoneCollezione = findViewById(R.id.collezione);
+        Button bottoneListaCarte = findViewById(R.id.listaCarte);
 
-        bottoneCollezione.setOnClickListener(v -> {
-            Intent paginaCollezione = new Intent(MainActivity.this, Collezione.class);
-            startActivity(paginaCollezione);
+        bottoneListaCarte.setOnClickListener(v -> {
+            Intent paginaListaCarte = new Intent(MainActivity.this, ListaCarte.class);
+            startActivity(paginaListaCarte);
         });
 
         Button bottoneSetCarte = findViewById(R.id.setCarte);
