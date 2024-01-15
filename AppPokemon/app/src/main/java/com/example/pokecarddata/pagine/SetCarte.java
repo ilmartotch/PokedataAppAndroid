@@ -104,6 +104,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -122,7 +123,7 @@ import java.util.ArrayList;
 public class SetCarte extends AppCompatActivity {
 
     private final ArrayList<DatiCopertina> dati = new ArrayList<>();
-    private final ArrayList<DatiCopertina> datifiltrati = new ArrayList<>();
+    private ArrayList<DatiCopertina> datifiltrati = new ArrayList<>();
     private CopertinaAdapter projectsAdapter;
 
     @Override
@@ -144,7 +145,8 @@ public class SetCarte extends AppCompatActivity {
                 RecyclerView recyclerView = findViewById(R.id.listaSet);
                 recyclerView.setLayoutManager(new GridLayoutManager(SetCarte.this, 1));
 
-                projectsAdapter = new CopertinaAdapter(dati);
+                datifiltrati = listaDatiCopertina;
+                projectsAdapter = new CopertinaAdapter(datifiltrati);
                 recyclerView.setAdapter(projectsAdapter);
             }
 
@@ -168,6 +170,7 @@ public class SetCarte extends AppCompatActivity {
                 return true;
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             public void ricerca(String query) {
                 datifiltrati.clear();
 
@@ -177,10 +180,11 @@ public class SetCarte extends AppCompatActivity {
                     for (DatiCopertina dato : dati) {
                         if (dato.getNomeSet().toLowerCase().contains(query.toLowerCase())) {
                             datifiltrati.add(dato);
+                            projectsAdapter.notifyDataSetChanged();
                         }
                     }
                 }
-                projectsAdapter.notifyDataSetChanged();
+
             }
         });
     }
