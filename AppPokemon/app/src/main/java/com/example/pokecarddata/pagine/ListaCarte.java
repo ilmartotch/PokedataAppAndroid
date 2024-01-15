@@ -5,7 +5,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pokecarddata.R;
@@ -24,8 +28,16 @@ public class ListaCarte extends AppCompatActivity {
             finish();
         });
 
+
+        Button bottoneCollegamento = findViewById(R.id.collegamentoAltreCarte);
+        bottoneCollegamento.setOnClickListener(view -> {
+            String url = "https://www.pokedata.io/";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        });
+
         RecyclerView recyclerView = findViewById(R.id.listaCarte);
-        recyclerView.setLayoutManager(new GridLayoutManager(ListaCarte.this, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(ListaCarte.this, 1));
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

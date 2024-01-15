@@ -8,6 +8,22 @@
     android:background="@color/black"
     tools:context=".pagine.SetCarte">
 
+    <Button
+        android:id="@+id/collegamentoAltreCarte"
+        android:layout_width="351dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/rosso"
+        android:text="@string/collegamento_altre_carte"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaCarte" />
+
     <ImageButton
         android:id="@+id/backHomeCollezione"
         android:layout_width="131dp"
@@ -31,15 +47,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaCarte"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="720dp"
         android:layout_marginTop="20dp"
         android:elevation="10dp"
         app:layout_constraintTop_toBottomOf="@+id/backHomeCollezione"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="-3dp"
         tools:listitem="@layout/cardcollezionelayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
