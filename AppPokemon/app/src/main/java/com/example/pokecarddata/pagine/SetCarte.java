@@ -150,6 +150,9 @@ public class SetCarte extends AppCompatActivity {
                 recyclerView.setAdapter(projectsAdapter);
             }
 
+
+
+
             @Override
             public void processoFallito(Exception e) {
                 Log.d("Errore", e.getMessage());

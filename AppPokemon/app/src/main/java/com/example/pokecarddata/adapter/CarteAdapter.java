@@ -1,4 +1,3 @@
-// CarteAdapter.java
 package com.example.pokecarddata.adapter;
 
 import android.view.LayoutInflater;

@@ -26,7 +26,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
 
     public static void filter(String newText) {
     }
-
     @NonNull
     @Override
     public CopertinaViewHolder onCreateViewHolder(@NonNull ViewGroup parent,int viewType) {
@@ -35,7 +34,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         return new CopertinaViewHolder(view);
 
     }
-
     @Override
     public void onBindViewHolder(@NonNull CopertinaViewHolder holder, int position) {
         holder.bind(dati.get(position));
@@ -48,7 +46,6 @@ public class CopertinaAdapter extends RecyclerView.Adapter<CopertinaAdapter.Cope
         });
 
     }
-
     @Override
     public int getItemCount(){
         return dati.size();

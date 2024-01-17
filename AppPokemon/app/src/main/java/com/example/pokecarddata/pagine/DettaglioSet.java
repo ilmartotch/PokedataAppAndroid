@@ -11,8 +11,6 @@ import com.example.pokecarddata.R;
 import com.example.pokecarddata.dati.DatiCopertina;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
 public class DettaglioSet extends AppCompatActivity {
 
     @Override

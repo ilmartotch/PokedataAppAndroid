@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".pagine.SetCarte">
-
     <Button
         android:id="@+id/collegamentoAltreCarte"
         android:layout_width="351dp"
@@ -23,7 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listaCarte" />
-
     <ImageButton
         android:id="@+id/backHomeCollezione"
         android:layout_width="131dp"
@@ -46,7 +43,6 @@
         app:layout_constraintStart_toEndOf="@+id/backHomeCollezione"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaCarte"
         android:layout_width="match_parent"

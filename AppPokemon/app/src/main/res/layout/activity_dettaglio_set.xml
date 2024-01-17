@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".pagine.DettaglioSet"
     android:background="@color/black">
-
     <ImageView
         android:id="@+id/copertinaDettaglio"
         android:layout_width="match_parent"
@@ -17,7 +16,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/titoloSet"
         android:layout_width="wrap_content"
@@ -42,7 +40,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titoloSet" />
-
     <TextView
         android:id="@+id/dataRilascio"
         android:layout_width="wrap_content"
@@ -54,7 +51,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carteTotali" />
-
     <Button
         android:id="@+id/buttonBackSet"
         android:layout_width="150dp"
@@ -67,5 +63,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataRilascio" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
