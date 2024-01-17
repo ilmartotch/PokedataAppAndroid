@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Progetto0dp</string>
-    <string name="immagine">immagine</string>
-    <string name="bottone" />
-    <string name="testo_di_prova">testo di prova</string>
-    <string name="titolo_box">Titolo Box</string>
-    <string name="testo_box">testo box</string>
-    <string name="testo_bottone">testo bottone</string>
-</resources>
